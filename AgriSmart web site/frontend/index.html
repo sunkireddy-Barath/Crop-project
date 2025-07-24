@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AgriSmart</title>
+
+  <!-- ✅ Flask static path for CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">AgriSmart</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#sustainability">Sustainability</a></li>
+          <li><a href="#crops">Crops</a></li>
+          <li><a href="#soils">Soils</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2 class="animated-title">Cultivating a <span class="green-word">Greener</span> Tomorrow</h2>
+      <p>Empowering agriculture with green technology</p>
+    </div>
+  </section>
+
+  <section id="about" class="section fade-in">
+    <h2>About Us</h2>
+    <p>GreenGrow is committed to revolutionizing agriculture through nature-inspired technologies and sustainable practices.</p>
+  </section>
+
+  <section id="sustainability" class="section light fade-in">
+    <h2>Why Sustainability?</h2>
+    <p>Our approach links innovation with ecology to support both farmers and the planet.</p>
+  </section>
+
+  <section id="crops" class="section fade-in">
+    <h2>Types of Crops</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Rice_Plants_%28IRRI%29.jpg" alt="Rice">
+        <h3>Rice</h3>
+        <p>Staple crop grown in flooded fields; requires high water and warm climates.</p>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Wheat_close-up.JPG" alt="Wheat">
+        <h3>Wheat</h3>
+        <p>Versatile cereal crop grown in temperate regions; used for bread, pasta, and more.</p>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Maize_plant.jpg" alt="Maize">
+        <h3>Maize (Corn)</h3>
+        <p>Highly productive crop used for food, feed, and industrial products.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="soils" class="section light fade-in">
+    <h2>Soil Types and Their Benefits</h2>
+    <div class="card-grid">
+      <div class="card"><h3>Loamy Soil</h3><p>Rich in nutrients, excellent water retention and drainage — best for most crops.</p></div>
+      <div class="card"><h3>Sandy Soil</h3><p>Drains quickly, warms fast — ideal for crops like carrots, potatoes, and peanuts.</p></div>
+      <div class="card"><h3>Clay Soil</h3><p>High in nutrients, retains moisture — good for rice and broccoli, but requires proper drainage.</p></div>
+      <div class="card"><h3>Silt Soil</h3><p>Fertile and smooth — retains moisture well and supports lush plant growth.</p></div>
+    </div>
+  </section>
+
+  <!-- 🌱 Crop Recommendation Form -->
+  <section id="predict-crop" class="section fade-in">
+    <h2>🌾 Get Crop Recommendation</h2>
+    <form id="cropForm">
+      <input type="number" name="N" placeholder="Nitrogen (N)" required />
+      <input type="number" name="P" placeholder="Phosphorus (P)" required />
+      <input type="number" name="K" placeholder="Potassium (K)" required />
+      <input type="number" step="0.01" name="temperature" placeholder="Temperature (°C)" required />
+      <input type="number" step="0.01" name="humidity" placeholder="Humidity (%)" required />
+      <input type="number" step="0.01" name="ph" placeholder="Soil pH" required />
+      <input type="number" step="0.01" name="rainfall" placeholder="Rainfall (mm)" required />
+      <button type="submit">Get Recommended Crop</button>
+    </form>
+    <div id="predictionResult" style="margin-top: 20px; font-weight: bold;"></div>
+  </section>
+
+  <footer id="contact">
+    <p>Contact us: hello@greengrow.ag</p>
+    <p>© 2025 GreenGrow Farms. All rights reserved.</p>
+  </footer>
+
+  <!-- ✅ Flask static path for JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
